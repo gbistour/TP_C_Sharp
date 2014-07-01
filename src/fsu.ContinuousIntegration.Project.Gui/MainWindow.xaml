@@ -1,0 +1,21 @@
+﻿<Window x:Class="fsu.ContinuousIntegration.Project.Gui.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:gui="clr-namespace:fsu.ContinuousIntegration.Project.Gui"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <ListView ItemsSource="{Binding Path=Anciens}" d:DataContext="{d:DesignInstance Type=gui:Model}">
+            <ListView.View>
+                <GridView>
+                    <GridView.Columns>
+                        <GridViewColumn Header="Nom" DisplayMemberBinding="{Binding LastName}"/>
+                        <GridViewColumn Header="Prénom" DisplayMemberBinding="{Binding FirstName}"/>
+                    </GridView.Columns>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>
